@@ -1,46 +1,56 @@
 public class Person {
-    private String name;
-    private int age;
+    String name;
+    int age;
 
-
-    public Person(String name) {   //오버로딩
+    //오버로딩
+    public Person (String name) {
         this.name = name;
     }
-    public Person(String name,int age) {   //오버로딩
+    public Person (String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public void intro() {   //오버로딩
-        System.out.println("사람입니다");
+    public void eat() {
+        System.out.println("밥 먹기.");
     }
 
-    public void intro(String name) {   //오버로딩
-        System.out.println("사람 " + name );
+    public void say() {
+        System.out.println("말하기.");
     }
 
-    public void intro(String name, int age) {   //오버로딩
-        System.out.println("사오 " + name + "나이 " + age);
+    public void info() {
+        System.out.printf("이름 %s 나이 %d\n",name,age);
     }
-
-
 }
 
-class Student extends Person {
-    private String name;
-    private int age;
 
-    public Student(String name) {  //오버로딩
+class Student extends Person {
+    int grade;
+
+    //오버로딩
+    public Student (String name, int grade) {
         super(name);
+        this.grade = grade;
     }
 
-    public Student(String name, int age) {  //오버로딩
+    public Student (String name, int age, int grade) {
         super(name,age);
+        this.grade = grade;
     }
 
     @Override
-    public void intro() {   //오버라이딩 14번째 Person클래스의 intro를 오버라이딩해 Student클래스에 맞게 재정의
-        System.out.println("학생입니다.");
+    public void eat() {
+        System.out.println("급식 먹기.");
     }
 
+    public void learn() {
+        System.out.println("배우다.");
+    }
+
+}
+
+class Abc {
+    private int a = 12345;
+    public int ab = 11111;
 }

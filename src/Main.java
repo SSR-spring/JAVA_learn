@@ -1,23 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        Person person1 = new Person("자바");  // Person.java 6 ~ 8 번째 줄
-        person1.intro();
-        person1.intro("abc");
-        person1.intro("abcde",10);
+        Person person1 = new Person("abc", 18);
+        person1.info();
+        person1.eat();
+        person1.say();
 
+        System.out.println("------------");
+        Student student1 = new Student("abcde", 17, 90);
+        student1.eat();  // 오버라이딩
+        student1.learn();
+        student1.say();   // Person 클래스를 상속 받았기 때문에 Student 클래스에 say 가 정의되있지 않아도 사용가능
 
-
-        Person person2 = new Person("JPA",123);  // Person.java 9 ~ 12 번째 줄
-        person2.intro();
-
-
-
-        Student student1 = new Student("스프링");  // Person.java 33 ~ 35 번째 줄
-        student1.intro();
-
-
-        Student student2 = new Student("JAVA",12312312);  // Person.java 37 ~ 39 번째 줄
-        student2.intro();
-
+        System.out.println("------------");
+        Abc abc = new Abc();
+        //System.out.println(abc.a); //private error    Abc 클래스의 변수 a를 public 으로 변경하기 a 또한 접근가능
+        System.out.println(abc.ab); //public 접근 가능
     }
 }
